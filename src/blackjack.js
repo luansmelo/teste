@@ -97,13 +97,15 @@ const gameOver = (playerHand, computerHand) => {
   }
 };
 
-const startGame = () => {
+const getUserInput = (message) => {
+  return prompt(message);
+};
+
+const startGame = (getUserInput) => {
   console.log("Bem-vindo ao jogo Blackjack!");
 
   while (true) {
-    const startNewRound = prompt(
-      "Deseja iniciar uma nova rodada? (s/n) "
-    ).toLowerCase();
+    const startNewRound = getUserInput("Deseja iniciar uma nova rodada? (s/n) ").toLowerCase();
     if (startNewRound !== "s") {
       console.log("Fim de jogo.");
       break;
@@ -119,9 +121,7 @@ const startGame = () => {
       console.log("\nSua mão:", displayHand(playerHand));
       console.log("Mão do computador:", displayHand(computerHand, true));
 
-      const buyCard = prompt(
-        "Deseja comprar mais uma carta? (s/n) "
-      ).toLowerCase();
+      const buyCard = getUserInput("Deseja comprar mais uma carta? (s/n) ").toLowerCase();
       if (buyCard !== "s") {
         break;
       }
@@ -138,4 +138,4 @@ const startGame = () => {
   }
 };
 
-startGame();
+module.exports = { startGame };
