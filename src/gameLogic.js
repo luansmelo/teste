@@ -97,10 +97,6 @@ const gameOver = (playerHand, computerHand) => {
   }
 };
 
-const getUserInput = (message) => {
-  return prompt(message);
-};
-
 const startGame = (getUserInput) => {
   console.log("Bem-vindo ao jogo Blackjack!");
 
@@ -138,4 +134,4 @@ const startGame = (getUserInput) => {
   }
 };
 
-module.exports = { startGame };
+module.exports = { startGame, newDeck, shuffleDeck, handValue, displayHand, gameOver, dealCard };
