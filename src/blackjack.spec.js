@@ -1,4 +1,4 @@
-const { newDeck, shuffleDeck, dealCard, handValue } = require("./main");
+const { newDeck, shuffleDeck, dealCard, handValue } = require("./gameLogic");
 
 test("newDeck creates a deck with 52 cards", () => {
   const deck = newDeck();
@@ -20,11 +20,15 @@ test("dealCard removes a card from the deck", () => {
 });
 
 test("handValue calculates the value of a hand", () => {
-  const hand1 = [{ value: "2", suit: "♠" }, { value: "K", suit: "♣" }];
-  const hand2 = [{ value: "A", suit: "♠" }, { value: "K", suit: "♣" }];
+  const hand1 = [{ value: "A", suit: "♠" }, { value: "K", suit: "♣" }];
+  const hand2 = [
+    { value: "A", suit: "♠" },
+    { value: "10", suit: "♣" },
+    { value: "K", suit: "♦" },
+  ];
   const hand3 = [{ value: "A", suit: "♠" }, { value: "A", suit: "♣" }];
 
-  expect(handValue(hand1)).toBe(12);
+  expect(handValue(hand1)).toBe(21);
   expect(handValue(hand2)).toBe(21);
   expect(handValue(hand3)).toBe(12);
 });
