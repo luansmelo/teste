@@ -1,4 +1,4 @@
-const { newDeck, shuffleDeck, dealCard, handValue } = require("./blackjack");
+const { newDeck, shuffleDeck, dealCard, handValue } = require("./main");
 
 test("newDeck creates a deck with 52 cards", () => {
   const deck = newDeck();
