@@ -1,9 +1,16 @@
-const readline = require("readline-sync");
+const gameLogic = require("./gameLogic");
 
-const getUserInput = (message) => {
-  return readline.question(message);
-};
+let getUserInput;
 
-const { startGame } = require("./gameLogic");
+if (typeof window !== "undefined") {
+  getUserInput = (message) => {
+    return prompt(message);
+  };
+} else {
+  const readlineSync = require("readline-sync");
+  getUserInput = (message) => {
+    return readlineSync.question(message);
+  };
+}
 
-startGame(getUserInput);
+gameLogic.startGame(getUserInput);
