@@ -1,4 +1,4 @@
-import { newDeck, shuffleDeck, dealCard, handValue }  from "./blackjack";
+const { newDeck, shuffleDeck, dealCard, handValue } = require("./blackjack");
 
 test("newDeck creates a deck with 52 cards", () => {
   const deck = newDeck();
