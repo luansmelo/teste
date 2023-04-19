@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "module": "commonjs",
   "scripts": {
     "test": "jest --passWithNoTests",
     "build": "webpack --mode production"
